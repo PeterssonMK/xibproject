@@ -10,15 +10,15 @@ import UIKit
 class CustomViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self 
         registerCells()
-
-      
+        
     }
-
+    
 }
 
 extension CustomViewController: UITableViewDelegate, UITableViewDataSource {
@@ -39,15 +39,14 @@ extension CustomViewController: UITableViewDelegate, UITableViewDataSource {
 
      
         if (1...10).contains(indexPath.row + 1) {
-            if ((indexPath.row + 1) % 2 == 0) {return evenCell} else {
-                return oddCell
-        }
-    
-        } else if (11...13).contains(indexPath.row + 1) {return extraCell } else {
-            return ordinaryCell}
-     
+            if ((indexPath.row + 1) % 2 == 0) {return evenCell}
+            return oddCell
             
         }
+        if (11...13).contains(indexPath.row + 1) {return extraCell }
+        return ordinaryCell
+        
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50

@@ -38,7 +38,7 @@ class OrdinaryTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpConstraints(){
+    func setUpConstraints() {
         leftLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         
         leftLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12).isActive = true
@@ -52,9 +52,6 @@ class OrdinaryTableViewCell: UITableViewCell {
 
         leftLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         rightLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        
-        
-        
     }
 
 }
